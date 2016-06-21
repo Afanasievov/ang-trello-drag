@@ -4,7 +4,7 @@ function ListController(listFactory) {
   ctrl.removeList = removeList;
 
   ctrl.data = {
-    listNames: getListsNames()
+    listsNames: getListsNames()
   };
 
   function removeList() {

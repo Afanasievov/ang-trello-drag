@@ -16,9 +16,8 @@
                    is-editing='$ctrl.isEditing'
                    ng-model='$ctrl.data.editingValue'>
             <select class='select-list'
-                    ng-model='$ctrl.editingCard.list_id'
-                    ng-change="$ctrl.updateCard()"
-                    ng-options="name.id as name.name for name in $ctrl.listsNames">
+                    ng-model='$ctrl.data.selectedOption'
+                    ng-options="list.name for list in $ctrl.listsNames track by list.id">
             </select>
         </form>
     </div>

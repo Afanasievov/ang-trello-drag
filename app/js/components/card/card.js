@@ -1,18 +1,18 @@
 function CardController(listFactory) {
   var ctrl = this;
-
+  
+  listsNames: listFactory.getListsNames();
+  
   ctrl.data = {
-    listsNames: listFactory.getListsNames(),
     editingCard: null,
     isEditing: false,
-    editingValue: ctrl.card.description
+    editingValue: ctrl.card.description,
+    selectedOption: ctrl.listsNames[ctrl.listIndex]
   };
 
   ctrl.onKeyUp = onKeyUp;
   ctrl.updateCard = updateCard;
   ctrl.deleteCard = deleteCard;
-
-  // ctrl.lists = listFactory.getLists();
 
   ctrl.editCard = function () {
     ctrl.data.isEditing = true;
@@ -27,7 +27,12 @@ function CardController(listFactory) {
   }
 
   function updateCard() {
+    var destIndex = ctrl.data.selectedOption.id;
     ctrl.card.description = ctrl.data.editingValue;
+    
+    if (destIndex != ctrl.listIndex) {
+      listFactory.transferCard(ctrl.listIndex, destIndex, ctrl.cardIndex);
+    }
     ctrl.data.isEditing = false;
   }
 

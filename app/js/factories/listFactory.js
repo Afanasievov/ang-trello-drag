@@ -34,8 +34,8 @@ app.factory('listFactory', function () {
   service.getListsNames = function () {
     var names = [];
 
-    lists.forEach(function (list) {
-      names.push(list.listName);
+    lists.forEach(function (list, index) {
+      names.push({id:index, name: list.listName});
     });
     return names;
   };
@@ -56,6 +56,11 @@ app.factory('listFactory', function () {
   };
 
   service.deleteCard = function (listIndex, cardIndex) {
+    lists[listIndex].cards.splice(cardIndex, 1);
+  };
+
+  service.transferCard = function (listIndex, destIndex, cardIndex) {
+    lists[destIndex].cards.push(lists[listIndex].cards[cardIndex]);
     lists[listIndex].cards.splice(cardIndex, 1);
   };
 
