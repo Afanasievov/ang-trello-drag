@@ -1,0 +1,12 @@
+<section id="lists-container"
+         class="lists-container">
+
+    <div class="row">
+        <trello-list ng-repeat="list in $ctrl.lists track by $index"
+                     list="list"
+                     list-index="$index">
+        </trello-list>
+        <input-add-list></input-add-list>
+    </div>
+
+</section>

@@ -1,0 +1,21 @@
+<ul class="list list-inline"
+    data-as-sortable="$ctrl.dragControlListeners"
+    data-ng-model="$ctrl.list">
+    <h1 ng-bind="$ctrl.list.listName"></h1>
+    <h1 ng-bind="$index"></h1>
+
+    <trello-card ng-repeat="card in $ctrl.list.cards track by $index"
+                 card="card"
+                 list-index="$ctrl.listIndex"
+                 card-index="$index"
+                 lists-names="$ctrl.data.listsNames"
+                 data-as-sortable-item>
+    </trello-card>
+
+    <a ng-click="$ctrl.removeList()" class="hand">
+        <div class="remove remove-list"></div>
+    </a>
+
+    <input-add-card list-index="$ctrl.listIndex"></input-add-card>
+
+</ul>
