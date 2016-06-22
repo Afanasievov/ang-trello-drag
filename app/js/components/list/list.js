@@ -4,18 +4,21 @@ function ListController(listFactory) {
   ctrl.removeList = removeList;
 
   ctrl.data = {
-    listsNames: getListsNames()
+    listsNames: {}
   };
+
+  _getListsNames();
 
   function removeList() {
     listFactory.removeList(ctrl.listIndex);
+    _getListsNames();
   }
 
-  function getListsNames() {
-    return listFactory.getListsNames();
+  function _getListsNames() {
+    ctrl.data.listsNames = listFactory.getListsNames();
   }
 }
-ListController.$inject = ['listFactory', '$scope'];
+ListController.$inject = ['listFactory'];
 app.component('trelloList', {
   templateUrl: 'js/components/list/list.html',
   controller: ListController,

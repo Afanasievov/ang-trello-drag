@@ -1,8 +1,6 @@
 function CardController(listFactory) {
   var ctrl = this;
   
-  listsNames: listFactory.getListsNames();
-  
   ctrl.data = {
     editingCard: null,
     isEditing: false,
@@ -41,7 +39,7 @@ function CardController(listFactory) {
   }
 
 }
-CardController.$inject = ['listFactory', '$scope'];
+CardController.$inject = ['listFactory'];
 app.component('trelloCard', {
   templateUrl: 'js/components/card/card.html',
   controller: CardController,
