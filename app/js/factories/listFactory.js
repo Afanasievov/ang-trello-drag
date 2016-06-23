@@ -31,7 +31,7 @@ app.factory('listFactory', function () {
     return lists;
   };
   
-  service.getListsNames = function () {
+  service.getMapListNames = function () {
     var names = [];
 
     lists.forEach(function (list, index) {

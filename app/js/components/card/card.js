@@ -5,7 +5,7 @@ function CardController(listFactory) {
     editingCard: null,
     isEditing: false,
     editingValue: ctrl.card.description,
-    selectedOption: ctrl.listsNames[ctrl.listIndex]
+    selectedOption: ctrl.mapListNames[ctrl.listIndex]
   };
 
   ctrl.onKeyUp = onKeyUp;
@@ -47,6 +47,6 @@ app.component('trelloCard', {
     card: '=',
     listIndex: '<',
     cardIndex: '<',
-    listsNames: '<'
+    mapListNames: '<'
   }
 });

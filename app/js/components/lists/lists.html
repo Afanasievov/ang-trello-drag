@@ -2,11 +2,14 @@
          class="lists-container">
 
     <div class="row">
-        <trello-list ng-repeat="list in $ctrl.lists track by $index"
+        <trello-list ng-repeat="list in $ctrl.data.lists track by $index"
                      list="list"
-                     list-index="$index">
+                     list-index="$index"
+                     map-list-names="$ctrl.data.mapListNames"
+                     get-map-list-names="$ctrl.getMapListNames()">
         </trello-list>
-        <input-add-list></input-add-list>
+        <input-add-list get-map-list-names="$ctrl.getMapListNames()">
+        </input-add-list>
     </div>
 
 </section>

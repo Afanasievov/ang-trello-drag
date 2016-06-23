@@ -2,21 +2,12 @@ function ListController(listFactory) {
   var ctrl = this;
 
   ctrl.removeList = removeList;
-
-  ctrl.data = {
-    listsNames: {}
-  };
-
-  _getListsNames();
-
+  
   function removeList() {
     listFactory.removeList(ctrl.listIndex);
-    _getListsNames();
+    ctrl.getMapListNames();
   }
-
-  function _getListsNames() {
-    ctrl.data.listsNames = listFactory.getListsNames();
-  }
+  
 }
 ListController.$inject = ['listFactory'];
 app.component('trelloList', {
@@ -24,6 +15,8 @@ app.component('trelloList', {
   controller: ListController,
   bindings: {
     list: '=',
-    listIndex: '<'
+    listIndex: '<',
+    mapListNames: '<',
+    getMapListNames: '&'
   }
 });

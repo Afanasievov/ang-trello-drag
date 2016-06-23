@@ -1,7 +1,6 @@
 <ul class="list list-inline"
     data-as-sortable
     data-ng-model="$ctrl.list.cards">
-    <h1 ng-bind="$ctrl.list.listName"></h1>
 
     <li class="card"
         ng-repeat="card in $ctrl.list.cards"
@@ -10,15 +9,14 @@
                 <trello-card card="card"
                              list-index="$ctrl.listIndex"
                              card-index="$index"
-                             lists-names="$ctrl.data.listsNames">
+                             map-list-names="$ctrl.mapListNames">
                 </trello-card>
             </div>
     </li>
 
+    <h1 ng-bind="$ctrl.list.listName"></h1>
     <a ng-click="$ctrl.removeList()" class="hand">
         <div class="remove remove-list"></div>
     </a>
-
-    <input-add-card list-index="$ctrl.listIndex"></input-add-card>
 
 </ul>
