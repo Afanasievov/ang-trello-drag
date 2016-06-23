@@ -1,10 +1,11 @@
 /* BASE */
-body{
+body {
     margin: 0;
     padding: 0;
     font-size: 16px;
 }
-header{
+
+header {
     background-color: #205c7e;
     color: #FFF;
     margin: 0;
@@ -12,13 +13,13 @@ header{
     overflow: hidden;
 }
 
-input{
-  border-radius: 4px;
+input {
+    border-radius: 4px;
 }
 
 /* END BASE */
 
-.app-name{
+.app-name {
     font-family: 'Yesteryear', cursive;
     color: #fff;
     font-weight: 500;
@@ -28,71 +29,73 @@ input{
     text-indent: .5em;
 }
 
-.list{
+.list {
     width: 200px;
     background-color: #e3e3e3;
     border-radius: 4px;
-    padding: 10px;
+    padding: 25px 10px 10px;
     border: 1px solid #999;
     vertical-align: top;
     position: relative;
 }
 
-.list h1{
-  font-size: 16px;
-  font-weight: 700;
+.list h1 {
+    position: absolute;
+    top: 5px;
+    font-size: 16px;
+    font-weight: 700;
 }
 
-.list input{
-  margin-bottom:0;
+.list input {
+    margin-bottom: 0;
 }
 
-.list.new-list{
-  background-color: #628DA4;
+.list.new-list {
+    background-color: #628DA4;
 }
 
-.list-inline{
+.list-inline {
     display: inline-block;
 }
 
-.lists-container{
-  padding: 20px;
-  position: relative;
+.lists-container {
+    padding: 20px;
+    position: relative;
 }
 
-.remove{
+.remove {
     width: 15px;
     height: 15px;
-    background: url( ../img/x.svg);
+    background: url(../img/x.svg);
 }
 
-.remove-small{
+.remove-small {
     width: 10px;
     height: 10px;
-    background: url( ../img/x_sm.svg);
+    background: url(../img/x_sm.svg);
 }
 
-.remove-list{
-  position : absolute;
-  margin: 6px;
-  font-family: Helvetica, Arial, Sans-Serif;
-  top: 0;
-  right: 0;
-  font-weight: 700;
-  color: #205c7e;
+.remove-list {
+    position: absolute;
+    margin: 6px;
+    font-family: Helvetica, Arial, Sans-Serif;
+    top: 0;
+    right: 0;
+    font-weight: 700;
+    color: #205c7e;
 }
 
-.remove-card{
+.remove-card {
     position: absolute;
     top: 3px;
     right: 3px;
 }
 
-.no-display{
+.no-display {
     display: none;
 }
 
-li.card{
+li.card {
     padding: 20px;
     background-color: #FFF;
     border-radius: 4px;
@@ -102,62 +105,74 @@ li.card{
     list-style-type: none;
 }
 
-.edit{
+.edit {
     width: 15px;
     height: 15px;
-    background: url( ../img/pen_alt_stroke.svg);
+    background: url(../img/pen_alt_stroke.svg);
 }
 
-.edit-small{
+.edit-small {
     width: 10px;
     height: 10px;
-    background: url( ../img/pen_alt_stroke_sm.svg);
+    background: url(../img/pen_alt_stroke_sm.svg);
 }
 
-.edit-card{
+.edit-card {
     display: block;
     position: absolute;
     top: 3px;
     right: 20px;
 }
 
-.edit:hover{
-    background: url( ../img/pen_alt_fill.svg);
+.edit:hover {
+    background: url(../img/pen_alt_fill.svg);
 }
 
-.edit_sm:hover{
-    background: url( ../img/pen_alt_fill_sm.svg);
+.edit_sm:hover {
+    background: url(../img/pen_alt_fill_sm.svg);
 }
 
-.card:hover{
+.card:hover {
     border-color: #205c7e;
 }
 
-.hand{
+.hand {
     cursor: pointer;
 }
 
-input.search{
+input.search {
     width: 200px;
     margin-top: 4px;
     margin-bottom: 0;
     margin-right: 10px;
 }
 
-.select-list{
+.select-list {
     margin: 10px 0 0 0;
 }
 
-.header-link{
+.header-link {
     color: #FFF;
     vertical-align: middle;
 }
 
-.header-link:hover{
+.header-link:hover {
     color: #e3e3e3;
 }
 
 [ng\:cloak], [ng-cloak], .ng-cloak {
-  display: none;
+    display: none;
 }
 
+.as-sortable-dragging {
+    padding: 0;
+}
+
+.as-sortable-dragging li.card {
+    margin: 0;
+    background-color: #b4b4b4;
+}
+
+.as-sortable-dragging .hand {
+    display: none;
+}
