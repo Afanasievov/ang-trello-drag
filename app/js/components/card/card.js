@@ -11,6 +11,7 @@ function CardController(listFactory) {
   ctrl.onKeyUp = onKeyUp;
   ctrl.updateCard = updateCard;
   ctrl.deleteCard = deleteCard;
+  ctrl.cancelEdit = cancelEdit;
 
   ctrl.editCard = function () {
     ctrl.data.isEditing = true;
@@ -19,9 +20,13 @@ function CardController(listFactory) {
 
   function onKeyUp(e) {
     if (e.keyCode == 27) { // 27 - ESCAPE: cancel editing
-      ctrl.data.editingValue = ctrl.card.description;
-      ctrl.data.isEditing = false;
+      cancelEdit();
     }
+  }
+  
+  function cancelEdit() {
+    ctrl.data.editingValue = ctrl.card.description;
+    ctrl.data.isEditing = false;
   }
 
   function updateCard() {

@@ -19,6 +19,14 @@
                     ng-model='$ctrl.data.selectedOption'
                     ng-options="list.name for list in $ctrl.mapListNames track by list.id">
             </select>
+            <a class="button tiny radius success"
+            ng-click="$ctrl.updateCard()">
+              Save
+            </a>
+            <a class="button tiny radius alert"
+              ng-click="$ctrl.cancelEdit()">
+              Cancel
+            </a>
         </form>
     </div>
 </div>
